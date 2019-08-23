@@ -10,7 +10,7 @@ class HtmlParse:
     def __init__(self, songurl):
         self._songurl = songurl
 
-    def parse_html(self,music):
+    def parse_html(self, music):
         driver.get(self._songurl)
         driver.switch_to.frame("g_iframe")
         html = driver.page_source
@@ -30,8 +30,6 @@ class HtmlParse:
                 music.type = mate_content
             elif mate_property == 'og:image':
                 music.imageurl = mate_content
-            elif mate_property == 'og:url':
-                music.songurl = mate_content
             elif mate_property == 'og:description':
                 music.description = mate_content
             elif mate_property == 'og:music:artist':
@@ -44,5 +42,5 @@ class HtmlParse:
                 music.duration = mate_content
             elif mate_property == 'music:musician':
                 music.artisturl = mate_content
-        doc('meta').filter(filter_mate).each(each_mate)
 
+        doc('meta').filter(filter_mate).each(each_mate)

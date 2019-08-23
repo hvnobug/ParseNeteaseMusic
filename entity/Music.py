@@ -122,14 +122,17 @@ class Music:
     def __str__(self):
         return '''
          songurl:\t{}
+         imageurl:\t{}
          lrcurl:\t{}
          name:\t{}
-         type:\t{}
          artist:\t{}
+         type:\t{}
          album:\t{}
          duration:\t{}
          albumurl:\t{}
          artisturl:\t{}
-         imageurl:\t{}
-         '''.format(self.songurl, self.lrcurl, self.name, self.type, self.artist, self.album, self.duration,
-                    self.albumurl, self.artisturl, self.imageurl)
+         lyric:
+{}
+         '''.format(self.songurl, self.imageurl, self.lrcurl, self.name, self.artist, self.type, self.album,
+                    self.duration,
+                    self.albumurl, self.artisturl, self.lyric)
